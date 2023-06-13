@@ -23,8 +23,7 @@ function App() {
   const login = async (userData) => {
     try {
       const { email, password } = userData;
-      const URL = 'http://localhost:3001/rickandmorty/login/';
-      const { data } = await axios(URL + `?email=${email}&password=${password}`);
+      const { data } = await axios(`/login/?email=${email}&password=${password}`);
       setAccess(data.access)
     } catch (error) {
       window.alert('Invalid email or password');
@@ -33,7 +32,7 @@ function App() {
 
   const onSearch = async (id) => {
     try {
-      const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`);
+      const { data } = await axios(`/character/${id}`);
       if (data.name && !characters.find(char => char.id === data.id))
         setCharacters(oldChars => [...oldChars, data])
       else
