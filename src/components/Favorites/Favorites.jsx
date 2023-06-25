@@ -13,6 +13,7 @@ const Favorites = () => {
         dispatch(loadFav());
         dispatch(animate(false));
         return () => dispatch(animate(true));
+        // eslint-disable-next-line
     }, []);
 
     const handleOrder = (event) => {
