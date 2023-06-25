@@ -7,7 +7,7 @@ import { animate, filterCards, loadFav, orderCards } from '../../Redux/actions';
 const Favorites = () => {
     const dispatch = useDispatch();
 
-    const { filterFavorites } = useSelector(state => state);
+    const { filterFavorites, myFavorites } = useSelector(state => state);
     
     useEffect(() => {
         dispatch(loadFav());
@@ -41,23 +41,25 @@ const Favorites = () => {
                 </select>
             </div>
             <div className={style.cardsConteiner}>
-            {filterFavorites.length
-                ?   filterFavorites.map(fav => {
-                        return (
-                            <Card
-                            key={fav.id}
-                            id={fav.id}
-                            name={fav.name}
-                            species={fav.species}
-                            status={fav.status}
-                            gender={fav.gender}
-                            image={fav.image}
-                            origin={fav.origin}
-                            onClose={fav.onClose}
-                            />
-                        )
-                    })
-                : <div className={style.notFound}>No hay ningún personaje de ese género</div>
+            {myFavorites.length
+                ?   filterFavorites.length
+                        ?   filterFavorites.map(fav => {
+                            return (
+                                <Card
+                                key={fav.id}
+                                id={fav.id}
+                                name={fav.name}
+                                species={fav.species}
+                                status={fav.status}
+                                gender={fav.gender}
+                                image={fav.image}
+                                origin={fav.origin}
+                                onClose={fav.onClose}
+                                />
+                            )
+                        })
+                        :   <div className={style.notFound}>No hay ningún personaje de ese género</div>
+                :   <div className={style.notFound}>No hay personjes favoritos</div>
             }
             </div>
         </div>
