@@ -9,7 +9,7 @@ import { animate } from '../../Redux/actions';
 const NavBar = ({onSearch, logout}) => {
     const dispatch = useDispatch();
     const [animation, setAnimation] = useState(true);
-
+    
     const handleAnimate = () => {
         if (animation) {
             setAnimation(false);
@@ -23,7 +23,7 @@ const NavBar = ({onSearch, logout}) => {
     return(
         <div className={style.nav}>
             <div className={style.conteHenry}>
-                <a href="https://www.soyhenry.com/" target="_blank" className={style.a}><img src={henry} className={style.henry}/></a>
+                <a href="https://www.soyhenry.com/" target="_blank" rel="noreferrer" className={style.a}><img src={henry} alt="Henry Logo" className={style.henry}/></a>
             </div>
             <div className={style.conteSearch}>
                 <SearchBar onSearch={onSearch}/>

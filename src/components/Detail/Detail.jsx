@@ -9,6 +9,7 @@ const Detail = () => {
   const [character, setCharacter] = useState({});
 
   useEffect(() => {
+    // const URL = 'http://localhost:3001/rickandmorty/character';
     axios(`/character/${id}`).then(
       ({ data }) => {
         if (data.name) {
@@ -34,7 +35,7 @@ const Detail = () => {
           </article>
         </div>
         <div className={style.foto}>
-          <img src={character.image && character.image}/>
+          <img src={character.image && character.image} alt={character.name && character.name} />
         </div>
       </div>
     </div>

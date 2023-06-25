@@ -42,6 +42,7 @@ const Form = ({login}) => {
 
     const handleRegister = async (userData) => {
         try {
+            // const URL = 'http://localhost:3001/rickandmorty/login/';
             const user = {
                 email: userData.email,
                 password: userData.password,
@@ -49,7 +50,7 @@ const Form = ({login}) => {
             if (error.email || error.password) window.alert('Invalid email or password');
             else if (error.confirmPassword) window.alert('Passwords don´t match');
             else {
-                await axios.post(`/login/${user}`);
+                await axios.post('/login', user);
                 setSing(false);
             };
         } catch (error) {
