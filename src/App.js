@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     access ? navigate('/home') : navigate('/');
-  }, [access, navigate]);
+  }, [access]);
 
 
   const login = async (userData) => {

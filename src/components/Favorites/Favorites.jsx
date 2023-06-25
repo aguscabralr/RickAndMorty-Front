@@ -13,7 +13,7 @@ const Favorites = () => {
         dispatch(loadFav());
         dispatch(animate(false));
         return () => dispatch(animate(true));
-    });
+    }, []);
 
     const handleOrder = (event) => {
         dispatch(orderCards(event.target.value));
