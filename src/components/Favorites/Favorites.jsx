@@ -29,8 +29,8 @@ const Favorites = () => {
             <div className={style.navSelect}>
                 <select onChange={handleOrder} className={style.select}>
                     <option value="O">Select Order</option>
-                    <option value="A">Asecendente</option>
-                    <option value="D">Descendente</option>
+                    <option value="A">Ascending ID</option>
+                    <option value="D">Descending ID</option>
                 </select>
                 <select onChange={handleFilter} className={style.select}>
                     <option value="all">All Characters</option>
@@ -58,8 +58,8 @@ const Favorites = () => {
                                 />
                             )
                         })
-                        :   <div className={style.notFound}>No hay ningún personaje de ese género</div>
-                :   <div className={style.notFound}>No hay personjes favoritos</div>
+                        :   <div className={style.notFound}>There is no character with that genre</div>
+                :   <div className={style.notFound}>There is no favorites characters</div>
             }
             </div>
         </div>

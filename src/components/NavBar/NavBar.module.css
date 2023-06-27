@@ -6,7 +6,7 @@
     height: 70px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-image: url(../assets/navbar.png);
     background-size: cover;
@@ -24,14 +24,14 @@
 
 .conteSearch {
     display: inline;
-    width: 50%;
+    width: 40%;
     margin: 0 20px;
 }
 
 .conteButton {
-    min-width: 160px;
+    display: flex;
+    flex-wrap: nowrap;
     margin: 0 20px;
-    flex-wrap: wrap;
 }
 
 .conteLog {
