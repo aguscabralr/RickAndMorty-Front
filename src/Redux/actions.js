@@ -3,9 +3,10 @@ import axios from "axios";
 
 // const URL = 'http://localhost:3001/rickandmorty';
 
-export const loadFav = () => {
+export const loadFav = (value) => {
     return async (dispatch) => {
         try {
+            if (value === 'empty') return dispatch({ type: LOAD_FAV, payload: [], });
             const { data } = await axios(`/fav`);
             return dispatch({ type: LOAD_FAV, payload: data, });
         } catch (error) {

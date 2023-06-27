@@ -12,7 +12,10 @@ const Favorites = () => {
     useEffect(() => {
         dispatch(loadFav());
         dispatch(animate(false));
-        return () => dispatch(animate(true));
+        return () => {
+            dispatch(loadFav('empty'));
+            dispatch(animate(true));
+        }
         // eslint-disable-next-line
     }, []);
 
