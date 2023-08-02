@@ -8,13 +8,13 @@ import store from './Redux/store';
 import axios from 'axios';
 
 // axios.defaults.baseURL = 'http://localhost:3001/rickandmorty';
-axios.defaults.baseURL = 'https://rickandmorty-back-production-ebf9.up.railway.app/rickandmorty';
+axios.defaults.baseURL = 'https://rickandmorty-back-9ygv.onrender.com//rickandmorty';
 
 createRoot(document.getElementById('root'))
   .render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <App/>
-    </BrowserRouter>
-  </Provider>,
-);
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>,
+  );
